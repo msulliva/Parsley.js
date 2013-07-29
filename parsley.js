@@ -1121,11 +1121,10 @@
     * @return {Boolean}
     */
     , removeItem: function ( elem ) {
-      var parsleyItem = $( elem ).parsley();
 
-      // identify & remove item if same Parsley hash
+      // identify & remove item if same element
       for ( var i = 0; i < this.items.length; i++ ) {
-        if ( this.items[ i ].hash === parsleyItem.hash ) {
+        if ( this.items[ i ].$element[0] == $(elem)[0] ) {
           this.items[ i ].destroy();
           this.items.splice( i, 1 );
           return true;
